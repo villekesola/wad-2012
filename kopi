@@ -1,0 +1,10 @@
+scp ./eka-servlet/dist/eka-servlet.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./eka-servlet_1/dist/eka-servlet_1.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./maven-intro/target/maven-intro-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./spring-jea/target/spring-jea-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./laskin/target/laskin-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./HitCounter/target/HitCounter-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./Varastonhallinta/target/Varastonhallinta-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./Olutvarasto/target/Olutvarasto-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./JsonOlutvarasto/target/JsonOlutvarasto-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
+scp ./Huonehallinta/target/Huonehallinta-1.0-SNAPSHOT.war vkesola@users.cs.helsinki.fi:/home/vkesola/tomcat/webapps
