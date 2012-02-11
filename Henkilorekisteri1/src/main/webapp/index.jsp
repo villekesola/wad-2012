@@ -9,6 +9,6 @@
     </head>
     <body>
         <h1>Page moved.</h1>
-        <p>Browse to <a href="${pageContext.request.contextPath}/Huonehallinta">${pageContext.request.contextPath}/listaa</a>.</p>
+        <p>Browse to <a href="${pageContext.request.contextPath}/Huonehallinta">${pageContext.request.contextPath}/henkilot</a>.</p>
     </body>
 </html>

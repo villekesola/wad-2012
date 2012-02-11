@@ -16,7 +16,7 @@ public class HuoneistoController {
     @Autowired
     private HuonePalvelu huonePalvelu;
 
-    @RequestMapping("/naytaHuoneet")
+    @RequestMapping("naytaHuoneet")
     public String naytaHuoneet() {
         return "redirect:/listaaHuoneet";
     }
