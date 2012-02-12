@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.Henkilo;
 import wad.service.HenkiloPalvelu;
+import wad.service.HuonePalvelu;
 
 @Controller
 public class HenkiloController {
-
-    @Autowired
+     @Autowired
     private HenkiloPalvelu henkiloPalvelu;
-
+                
     @RequestMapping("*")
     public String naytaHenkilot() {
         return "redirect:/listaaHenkilot";
@@ -24,7 +24,7 @@ public class HenkiloController {
     @RequestMapping("listaaHenkilot")
     public String listaaHenkilot(Model model) {
         model.addAttribute("henkilot", henkiloPalvelu.listaaHenkilot());
-        return "henkilot";
+        return "sovellus";
     }
 
     @RequestMapping(value = "lisaaHenkilo", method = RequestMethod.POST)

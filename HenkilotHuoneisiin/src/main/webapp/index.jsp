@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <meta http-equiv="refresh" content="0;url=${pageContext.request.contextPath}/henkilot">
+        <meta http-equiv="refresh" content="0;url=${pageContext.request.contextPath}/sovellus">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Page moved.</title>
     </head>

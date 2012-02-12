@@ -13,17 +13,24 @@ public class Huone implements Serializable {
     private int kerros;
     private int kapasiteetti;
     
-    @OneToMany
+    // yhdessä huoneessa voi olla usempi eri henkilö
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinTable(name = "HuoneessaHenkiloita", joinColumns = {
+    @JoinColumn(name="HuoneId", unique = true) 
+    },
+    inverseJoinColumns = {
+    @JoinColumn(name="HenkiloId")})
     private Set<Henkilo> henkilot;
-
+    
     public Set<Henkilo> getHenkilot() {
         return henkilot;
     }
-
+    
     public void setHenkilot(Set<Henkilo> henkilot) {
         this.henkilot = henkilot;
     }
-
+    
+    
     public Huone() {
     }
     public int getId() {

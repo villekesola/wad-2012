@@ -1,3 +1,4 @@
+
 package wad.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,11 @@ import wad.domain.Huone;
 import wad.service.HuonePalvelu;
 
 @Controller
-public class HuoneistoController {
-
+public class HuoneController {
+    
     @Autowired
     private HuonePalvelu huonePalvelu;
-
+    
     @RequestMapping("naytaHuoneet")
     public String naytaHuoneet() {
         return "redirect:/listaaHuoneet";
@@ -24,7 +25,7 @@ public class HuoneistoController {
     @RequestMapping("listaaHuoneet")
     public String listaaHuoneet(Model model) {
         model.addAttribute("huoneet", huonePalvelu.listaaHuoneet());
-        return "huoneet";
+        return "sovellus";
     }
 
     @RequestMapping(value = "lisaaHuone", method = RequestMethod.POST)
@@ -38,4 +39,5 @@ public class HuoneistoController {
         huonePalvelu.poistaHuone(huoneId);
         return "redirect:/listaaHuoneet";
     }
+    
 }

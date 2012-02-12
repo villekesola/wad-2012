@@ -1,15 +1,21 @@
 package wad.database;
 
 import java.util.List;
+import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import org.eclipse.persistence.sessions.Session;
+import org.eclipse.persistence.sessions.factories.SessionFactory;
 import org.springframework.stereotype.Repository;
 import wad.domain.Huone;
 
 @Repository
 public class JPAHuoneistoDao implements HuoneistoDao {
 
+    @Resource(name="sessionFactory")
+    private SessionFactory sessionFactory;
+    
     @PersistenceContext
     EntityManager entityManagerHuone;
 
@@ -35,7 +41,9 @@ public class JPAHuoneistoDao implements HuoneistoDao {
 
     @Override
     public List<Huone> listHuoneet() {
-        Query q = entityManagerHuone.createQuery("SELECT e FROM Huone e");
+        Query q = entityManagerHuone.createQuery("SELECT e FROM Huone e"); 
+       // Session session = sessionFactory.getCurrentSession();
+        
         return q.getResultList();
     }
 }

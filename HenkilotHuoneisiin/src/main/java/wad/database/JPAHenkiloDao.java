@@ -1,15 +1,20 @@
 package wad.database;
 
 import java.util.List;
+import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import org.eclipse.persistence.sessions.factories.SessionFactory;
 import org.springframework.stereotype.Repository;
 import wad.domain.Henkilo;
 
 @Repository
 public class JPAHenkiloDao implements HenkiloDao {
 
+   @Resource(name="sessionFactory")
+    private SessionFactory sessionFactory;
+    
     @PersistenceContext
     EntityManager entityManagerHenkilo;
 
@@ -20,9 +25,7 @@ public class JPAHenkiloDao implements HenkiloDao {
 
     @Override
     public Henkilo read(int id) {
-         Query query = entityManagerHenkilo.createQuery("FROM Henkilo as h LEFT JOIN FETCH  h.huoneet WHERE h.id="+id);
-          // return entityManagerHenkilo.find(Henkilo.class, id);
-         return (Henkilo) query.getSingleResult();
+         return entityManagerHenkilo.find(Henkilo.class, id);
     }
 
     @Override

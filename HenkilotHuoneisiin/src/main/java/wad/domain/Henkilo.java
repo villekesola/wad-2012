@@ -2,10 +2,7 @@
 package wad.domain;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Henkilo implements Serializable {
@@ -16,6 +13,17 @@ public class Henkilo implements Serializable {
     private String nimi;
     private String osoite;
     private String puhelinnumero;
+      
+    // henkilö voi olla vain yhdessä huoneessa kerrallaan
+    @ManyToOne(optional=true)
+    @JoinTable(name = "HuoneessaHenkiloita", joinColumns = {
+    @JoinColumn(name="HenkiloId") },
+    inverseJoinColumns = { @JoinColumn(name="HuoneId")})
+    private Huone huone;
+
+    public Huone getHuone() {
+        return huone;
+    }
     
     public int getId() {
         return id;
